@@ -91,4 +91,23 @@ public class LogAnalyzer
         }
         return quietest ;
     }
+    
+    public int busiestTimes(int[] hourCounts) 
+    {
+        int bH1 = 0; 
+        int bH2 = 0; 
+        for(int n:hourCounts)
+        {
+            if(bH1 < n)
+            {
+                bH2 = bH1; 
+                bH1 =n;
+            }
+            else if(bH2 < n)
+            {
+                bH2=n;
+            }
+        }
+        return bH1;
+    }
 }
