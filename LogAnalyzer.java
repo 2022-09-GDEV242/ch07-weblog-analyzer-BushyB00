@@ -55,6 +55,7 @@ public class LogAnalyzer
     {
         reader.printData();
     }
+    
     public int numberOfAccesses()
     {
         int total = 0;
@@ -63,6 +64,7 @@ public class LogAnalyzer
         }
         return total;
     }
+    
     public int busiestHour()
     {
     int maxHour = 0;
@@ -76,4 +78,17 @@ public class LogAnalyzer
     }
     return maxHour;
     }   
+    
+    public int quietestHour(int[] hourCounts)
+    {
+        int quietest = hourCounts[0];
+        for(int i =0; i<hourCounts.length;i++)
+        {
+            if(hourCounts[i]>0 && hourCounts[i] > quietest)
+            {
+               quietest = hourCounts[i];
+            }
+        }
+        return quietest ;
+    }
 }
